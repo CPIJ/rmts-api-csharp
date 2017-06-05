@@ -11,7 +11,6 @@ namespace RMTS.API.Controllers
     {
 		private static readonly IActionTypeService ActionTypeService = new ActionTypeService(new EfActionTypeRepository());
 
-        // TODO: Add correct ActionTypeService instead of null.
         public ActionTypeController() : base(ActionTypeService) { }
     }
 }
