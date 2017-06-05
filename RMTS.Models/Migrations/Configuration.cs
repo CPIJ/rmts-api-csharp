@@ -1,12 +1,11 @@
-using RMTS.Backend.Models;
+using System.Linq;
 
 namespace RMTS.Backend.Migrations
 {
 	using System;
-	using System.Data.Entity;
 	using System.Data.Entity.Migrations;
-	using System.Linq;
-	using RMTS.Backend.Data;
+	using Data;
+	using Models;
 
 
 	internal sealed class Configuration : DbMigrationsConfiguration<RmtsContext>

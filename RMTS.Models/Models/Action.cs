@@ -6,7 +6,7 @@ namespace RMTS.Backend.Models
     {
         public int Id { get; set; }
         public ActionType ActionType { get; set; }
-        public DateTime DateTime { get; set; }
+        public DateTime Date { get; set; }
         public User User { get; set; }
         public Prospect Prospect { get; set; }
         public bool IsCompleted { get; set; }
@@ -21,7 +21,7 @@ namespace RMTS.Backend.Models
         public Action(ActionType actionType, DateTime dateTime, User user, Prospect prospect, bool isCompleted, string description, string location)
         {
             ActionType = actionType;
-            DateTime = dateTime;
+            Date = dateTime;
             User = user;
             Prospect = prospect;
             IsCompleted = isCompleted;

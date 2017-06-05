@@ -43,9 +43,8 @@ namespace RMTS.API.Controllers
 	        {
 		        if (service.Create(item))
 			        return Ok("Item succesvol toegevoegd.");
-		        else
-					return BadRequest("Item is niet toegevoegd.");
-			}
+		        return BadRequest("Item is niet toegevoegd.");
+	        }
 	        catch (Exception e)
 	        {
 		        return InternalServerError(e);
@@ -62,8 +61,7 @@ namespace RMTS.API.Controllers
 	        {
 		        if (service.Update(item))
 			        return Ok("Item succesvol geupdatet.");
-		        else
-			        return BadRequest("Item niet geupdatet.");
+		        return BadRequest("Item niet geupdatet.");
 	        }
 	        catch (Exception e)
 	        {

@@ -10,14 +10,21 @@ namespace RMTS.Backend.Data.Mapping
 		internal ProspectMapping()
 		{
 			Property(p => p.EmailAddress)
-			.HasMaxLength(450)
-			.HasColumnAnnotation(IndexAnnotation.AnnotationName, new IndexAnnotation(
-				new IndexAttribute("U_EmailAddress", 1) { IsUnique = true }));
+				.IsRequired()
+				.HasMaxLength(450)
+				.HasColumnAnnotation(IndexAnnotation.AnnotationName, new IndexAnnotation(
+					new IndexAttribute("U_EmailAddress", 1) { IsUnique = true }));
 
 			Property(p => p.Profession)
+				.IsRequired()
 				.HasMaxLength(450)
 				.HasColumnAnnotation(IndexAnnotation.AnnotationName, new IndexAnnotation(
 					new IndexAttribute("U_Profession", 2) { IsUnique = true }));
+
+			Property(p => p.FirstName).IsRequired();
+			Property(p => p.Surname).IsRequired();
+
+			HasRequired(p => p.Status);
 		}
 	}
-}	
+}

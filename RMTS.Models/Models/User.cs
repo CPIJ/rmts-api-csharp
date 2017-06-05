@@ -13,13 +13,12 @@
 		    
 	    }
 
-        public User(int id, string name, string username, string password, bool isActive)
+        public User(string name, string username, string password, bool isActive)
         {
             Name = name;
             Username = username;
             Password = password;
             this.IsActive = isActive;
-            Id = id;
         }
     }
 }

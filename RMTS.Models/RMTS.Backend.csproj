@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Mapping\ActionMapping.cs" />
     <Compile Include="Data\Mapping\ActionTypeMapping.cs" />
     <Compile Include="Data\Mapping\ProspectMapping.cs" />
     <Compile Include="Data\Mapping\StatusMapping.cs" />
@@ -72,6 +73,14 @@
     <Compile Include="Migrations\201706051129545_DePluralize.Designer.cs">
       <DependentUpon>201706051129545_DePluralize.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706051309266_DateTimeToDate.cs" />
+    <Compile Include="Migrations\201706051309266_DateTimeToDate.Designer.cs">
+      <DependentUpon>201706051309266_DateTimeToDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706051329278_Nullable.cs" />
+    <Compile Include="Migrations\201706051329278_Nullable.Designer.cs">
+      <DependentUpon>201706051329278_Nullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Action.cs" />
     <Compile Include="Models\ActionType.cs" />
@@ -90,6 +99,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706051129545_DePluralize.resx">
       <DependentUpon>201706051129545_DePluralize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051309266_DateTimeToDate.resx">
+      <DependentUpon>201706051309266_DateTimeToDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051329278_Nullable.resx">
+      <DependentUpon>201706051329278_Nullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

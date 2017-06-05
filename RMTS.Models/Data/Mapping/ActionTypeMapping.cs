@@ -12,6 +12,7 @@ namespace RMTS.Backend.Data.Mapping
 		{
 			Property(a => a.Content)
 				.HasMaxLength(450)
+				.IsRequired()
 				.HasColumnAnnotation(IndexAnnotation.AnnotationName, new IndexAnnotation(
 					new IndexAttribute("U_Content", 1) { IsUnique = true }));
 		}

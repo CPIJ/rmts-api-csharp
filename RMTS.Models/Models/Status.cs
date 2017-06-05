@@ -15,5 +15,10 @@
             Id = id;
             Name = name;
         }
+
+	    public Status(string name)
+	    {
+		    this.Name = name;
+	    }
     }
 }

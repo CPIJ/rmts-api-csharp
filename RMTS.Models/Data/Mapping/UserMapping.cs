@@ -12,8 +12,12 @@ namespace RMTS.Backend.Data.Mapping
 		{
 			Property(u => u.Username)
 			.HasMaxLength(450)
+			.IsRequired()
 			.HasColumnAnnotation(IndexAnnotation.AnnotationName, new IndexAnnotation(
 				new IndexAttribute("U_Username", 1) { IsUnique = true }));
+
+			Property(u => u.Name).IsRequired();
+			Property(u => u.Password).IsRequired();
 		}
 	}
 }

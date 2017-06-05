@@ -10,9 +10,9 @@ namespace RMTS.Backend.Data.Repository.Implementations.Fake
 
         private readonly IEnumerable<User> users = new List<User>
         {
-                new User(1, "Alex Otten", "a.otten", "test1234", true),
-                new User(2, "Casper Pijnenburg", "c.pijnenburg", "test1234", false),
-                new User(3, "Bas van Wijk", "b.vanwijk", "test1234", true),
+                new User("Alex Otten", "a.otten", "test1234", true),
+                new User("Casper Pijnenburg", "c.pijnenburg", "test1234", false),
+                new User("Bas van Wijk", "b.vanwijk", "test1234", true),
         };
 
 	    public bool Create(User user)
