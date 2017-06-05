@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMTS.API", "rmts-api\RMTS.API.csproj", "{44CC148B-E63D-4EAE-8A83-6C11A4593B1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMTS.Backend", "RMTS.Models\RMTS.Backend.csproj", "{40B8C0E0-BD19-4047-B937-760B9F252395}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMTS.Test", "RMTS.Test\RMTS.Test.csproj", "{5B8C0B91-2912-4439-A307-C646577BE16C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44CC148B-E63D-4EAE-8A83-6C11A4593B1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44CC148B-E63D-4EAE-8A83-6C11A4593B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44CC148B-E63D-4EAE-8A83-6C11A4593B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44CC148B-E63D-4EAE-8A83-6C11A4593B1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40B8C0E0-BD19-4047-B937-760B9F252395}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40B8C0E0-BD19-4047-B937-760B9F252395}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40B8C0E0-BD19-4047-B937-760B9F252395}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40B8C0E0-BD19-4047-B937-760B9F252395}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B8C0B91-2912-4439-A307-C646577BE16C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B8C0B91-2912-4439-A307-C646577BE16C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B8C0B91-2912-4439-A307-C646577BE16C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B8C0B91-2912-4439-A307-C646577BE16C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
