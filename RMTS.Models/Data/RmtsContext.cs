@@ -7,6 +7,8 @@ namespace RMTS.Backend.Data
 {
 	public class RmtsContext : DbContext
 	{
+		private const string CONNECTION_STRING = "data source=CP; initial catalog=RMTS_DB; integrated security=SSPI;";
+
 		public DbSet<Action> Actions { get; set; }
 		public DbSet<ActionType> ActionTypes { get; set; }
 		public DbSet<Address> Addresses { get; set; }
@@ -15,7 +17,7 @@ namespace RMTS.Backend.Data
 		public DbSet<User> Users { get; set; }
 
 		// Hier wordt de connectiestring gezet.
-		public RmtsContext() : base("data source=CP; initial catalog=RMTS_DB; integrated security=SSPI;") { }
+		public RmtsContext() : base(CONNECTION_STRING) { }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
