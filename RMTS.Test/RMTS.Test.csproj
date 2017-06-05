@@ -52,7 +52,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RMTS.Models\RMTS.Backend.csproj">
+    <ProjectReference Include="..\RMTS.Backend\RMTS.Backend.csproj">
       <Project>{40b8c0e0-bd19-4047-b937-760b9f252395}</Project>
       <Name>RMTS.Backend</Name>
     </ProjectReference>
