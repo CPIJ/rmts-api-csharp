@@ -2,7 +2,7 @@
 
 namespace RMTS.Backend.Data.Service.Interface
 {
-    public interface IUserService : BasicService<User>
+    public interface IUserService : IBasicService<User>
     {
         User Login(Credentials credentials);
     }

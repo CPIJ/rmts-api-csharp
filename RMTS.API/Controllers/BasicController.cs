@@ -7,9 +7,9 @@ namespace RMTS.API.Controllers
 {
     public abstract class BasicController<T> : ApiController
     {
-        private readonly BasicService<T> service;
+        private readonly IBasicService<T> service;
 
-	    protected BasicController(BasicService<T> service)
+	    protected BasicController(IBasicService<T> service)
         {
             this.service = service;
         }

@@ -1,4 +1,7 @@
 ﻿using System.Web.Http;
+using RMTS.Backend.Data.Repository.Implementations.Entity_Framework;
+using RMTS.Backend.Data.Service.Implementation;
+using RMTS.Backend.Data.Service.Interface;
 using RMTS.Backend.Models;
 
 namespace RMTS.API.Controllers
@@ -6,8 +9,11 @@ namespace RMTS.API.Controllers
     [RoutePrefix("Action")]
     public class ActionController : BasicController<Action>
     {
+
+		private static readonly IActionService ActionService = new ActionService(new EfActionRepository());
+
         // TODO: Add correct AcionService instead of null.
-        public ActionController() : base(null) { }
+        public ActionController() : base(ActionService) { }
 
         [HttpGet]
         [Route("All/Prospect/{prospectId}")]

@@ -2,7 +2,7 @@
 
 namespace RMTS.Backend.Data.Service.Interface
 {
-	public interface IActionTypeService : IBasicService<ActionType>
+	public interface IActionService : IBasicService<Action>
 	{
 		
 	}

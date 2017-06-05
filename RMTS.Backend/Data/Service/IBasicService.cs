@@ -2,7 +2,7 @@
 
 namespace RMTS.Backend.Data.Service.Interface
 {
-    public interface BasicService<T>
+    public interface IBasicService<T>
     {
         bool Create(T item);
         bool Update(T item);
