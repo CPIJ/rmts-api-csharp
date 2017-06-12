@@ -1,8 +1,10 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.Linq;
+using System.Web.Http;
 using RMTS.Backend.Data.Repository.Implementations.Entity_Framework;
 using RMTS.Backend.Data.Service.Implementation;
 using RMTS.Backend.Data.Service.Interface;
-using RMTS.Backend.Models;
+using Action = RMTS.Backend.Models.Action;
 
 namespace RMTS.API.Controllers
 {
@@ -12,35 +14,42 @@ namespace RMTS.API.Controllers
 
 		private static readonly IActionService ActionService = new ActionService(new EfActionRepository());
 
-        // TODO: Add correct AcionService instead of null.
         public ActionController() : base(ActionService) { }
 
         [HttpGet]
         [Route("All/Prospect/{prospectId}")]
-        public IHttpActionResult GetAllByProspect(int prospectId)
+        public IHttpActionResult GetAllByProspect(int? prospectId)
         {
-            return BadRequest("Endpoint not implemented");
+	        if (prospectId == null) return BadRequest("Invalid parameter");
+
+	        return Ok(ActionService.GetAllByProspect(prospectId.Value));
         }
 
         [HttpGet]
         [Route("All/Unsorted/Prospect/{prospectId}")]
-        public IHttpActionResult GetAllByProspectUnsorted(int prospectId)
+        public IHttpActionResult GetAllByProspectUnsorted(int? prospectId)
         {
-            return BadRequest("Endpoint not implemented");
+	        if (prospectId == null) return BadRequest("Invalid parameter");
+
+	        return Ok(ActionService.GetAllByProspectUnsorted(prospectId.Value));
         }
 
         [HttpGet]
         [Route("All/User/{userId}")]
-        public IHttpActionResult GetAllByUser(int userId)
+        public IHttpActionResult GetAllByUser(int? userId)
         {
-            return BadRequest("Endpoint not implemented");
+	        if (userId == null) return BadRequest("Invalid paramter");
+
+	        return Ok(ActionService.GetAllByUser(userId.Value));
         }
 
-        [HttpGet]
-        [Route("All/Unsorted/User/{userId}")]
-        public IHttpActionResult GetAllByUserUnsorted(int userId)
-        {
-            return BadRequest("Endpoint not implemented");
-        }
+	    [HttpGet]
+	    [Route("All/Unsorted/User/{userId}")]
+	    public IHttpActionResult GetAllByUserUnsorted(int? userId)
+	    {
+			if (userId == null) return BadRequest("Invalid paramter");
+
+		    return Ok(ActionService.GetAllByUserUnsorted(userId.Value));
+		}
     }
 }

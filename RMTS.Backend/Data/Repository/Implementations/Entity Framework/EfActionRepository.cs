@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using RMTS.Backend.Data.Repository.Interface;
+using RMTS.Backend.Models;
 using Action = RMTS.Backend.Models.Action;
 
 namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
@@ -67,6 +68,62 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
 					.Include(a => a.Prospect)
 					.FirstOrDefault(a => a.Id == id);
 
+			}
+		}
+
+		public SortedActions GetAllByProspect(int prospectId)
+		{
+			using (var context = new RmtsContext())
+			{
+				return SortedActions.FromList(
+					context.Actions
+						.Where(a => a.Prospect.Id == prospectId)
+						.Include(a => a.ActionType)
+						.Include(a => a.User)
+						.Include(a => a.Prospect)
+						.ToList()
+				);
+			}
+		}
+
+		public IEnumerable<Action> GetAllByProspectUnsorted(int prospectId)
+		{
+			using (var context = new RmtsContext())
+			{
+				return context.Actions
+					.Where(a => a.Prospect.Id == prospectId)
+					.Include(a => a.ActionType)
+					.Include(a => a.User)
+					.Include(a => a.Prospect)
+					.ToList();
+			}
+		}
+
+		public SortedActions GetAllByUser(int userId)
+		{
+			using (var context = new RmtsContext())
+			{
+				return SortedActions.FromList(
+					context.Actions
+						.Where(a => a.User.Id == userId)
+						.Include(a => a.ActionType)
+						.Include(a => a.User)
+						.Include(a => a.Prospect)
+						.ToList()
+				);
+			}
+		}
+
+		public IEnumerable<Action> GetAllByUserUnsorted(int userId)
+		{
+			using (var context = new RmtsContext())
+			{
+				return context.Actions
+					.Where(a => a.User.Id == userId)
+					.Include(a => a.ActionType)
+					.Include(a => a.User)
+					.Include(a => a.Prospect)
+					.ToList();
 			}
 		}
 	}

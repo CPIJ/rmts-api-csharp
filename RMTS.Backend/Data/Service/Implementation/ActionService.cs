@@ -38,5 +38,25 @@ namespace RMTS.Backend.Data.Service.Implementation
 		{
 			return actionRepository.Find(id);
 		}
+
+		public SortedActions GetAllByProspect(int prospectId)
+		{
+			return actionRepository.GetAllByProspect(prospectId);
+		}
+
+		public IEnumerable<Action> GetAllByProspectUnsorted(int prospectId)
+		{
+			return actionRepository.GetAllByProspectUnsorted(prospectId);
+		}
+
+		public SortedActions GetAllByUser(int userId)
+		{
+			return actionRepository.GetAllByUser(userId);
+		}
+
+		public IEnumerable<Action> GetAllByUserUnsorted(int userId)
+		{
+			return actionRepository.GetAllByUserUnsorted(userId);
+		}
 	}
 }

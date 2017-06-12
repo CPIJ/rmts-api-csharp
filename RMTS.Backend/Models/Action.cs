@@ -2,7 +2,7 @@
 
 namespace RMTS.Backend.Models
 {
-    public class Action
+    public class Action : IComparable<Action>
     {
         public int Id { get; set; }
         public ActionType ActionType { get; set; }
@@ -28,5 +28,10 @@ namespace RMTS.Backend.Models
             Description = description;
             Location = location;
         }
+
+	    public int CompareTo(Action other)
+	    {
+		    return Date.CompareTo(other.Date);
+	    }
     }
 }

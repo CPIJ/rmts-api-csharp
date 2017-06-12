@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SortedActionsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RMTS.Backend\RMTS.Backend.csproj">
