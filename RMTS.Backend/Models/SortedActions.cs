@@ -4,40 +4,17 @@ namespace RMTS.Backend.Models
 {
     public class SortedActions
     {
-        public Dictionary<string, List<Action>> Actions { get; private set; }
+	    public IEnumerable<Action> Today { get; private set; }
+	    public IEnumerable<Action> ThisWeek { get; private set; }
+	    public IEnumerable<Action> ThisMonth { get; private set; }
+	    public IEnumerable<Action> Remainder { get; private set; }
 
-        public SortedActions(Dictionary<string, List<Action>> actions)
-        {
-            Actions = new Dictionary<string, List<Action>>
-            {
-                { "today", new List<Action>() },
-                { "thisWeek", new List<Action>() },
-                { "thisMonth", new List<Action>() },
-                { "remainder", new List<Action>() },
-            };
-        }
-
-        public void SetThisWeek(List<Action> actions)
-        {
-            SetAtKey("thisWeek", actions);
-        }
-
-        public void SetToday(List<Action> actions)
-        {
-            SetAtKey("today", actions);
-        }
-        public void SetThisMonth(List<Action> actions)
-        {
-            SetAtKey("thisMonth", actions);
-        }
-        public void SetRemainder(List<Action> actions)
-        {
-            SetAtKey("remainder", actions);
-        }
-
-        private void SetAtKey(string key, List<Action> actions)
-        {
-            Actions[key] = actions;
-        }
+	    public SortedActions(IEnumerable<Action> today, IEnumerable<Action> thisWeek, IEnumerable<Action> thisMonth, IEnumerable<Action> remainder)
+	    {
+		    Today = today;
+		    ThisWeek = thisWeek;
+		    ThisMonth = thisMonth;
+		    Remainder = remainder;
+	    }
     }
 }
