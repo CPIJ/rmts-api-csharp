@@ -13,6 +13,7 @@ namespace RMTS.Backend.Data
 		public DbSet<ActionType> ActionTypes { get; set; }
 		public DbSet<Address> Addresses { get; set; }
 		public DbSet<Prospect> Prospects { get; set; }
+		public DbSet<SocialLinks> SocialLinks { get; set; }
 		public DbSet<Status> Statuses { get; set; }
 		public DbSet<User> Users { get; set; }
 
