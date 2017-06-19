@@ -7,7 +7,10 @@ namespace RMTS.Backend.Data
 {
 	public class RmtsContext : DbContext
 	{
-		private const string CONNECTION_STRING = "data source=CP; initial catalog=RMTS_DB; integrated security=SSPI;";
+		//private const string CONNECTION_STRING = "data source=CP; initial catalog=RMTS_DB; integrated security=SSPI;";
+		//public const string CONNECTION_STRING = "Server=84.24.62.136;Database=RMTS;User Id=RMTS;Password=Habibke01;Pooling=false;";
+		public const string CONNECTION_STRING =
+			"Server=mssql.fhict.local;Database=dbi357629;User Id=dbi357629;Password=GzgP7ja0gaonhG7kVvu2;";
 
 		public DbSet<Action> Actions { get; set; }
 		public DbSet<ActionType> ActionTypes { get; set; }
