@@ -7,9 +7,12 @@ namespace RMTS.Backend.Data
 {
 	public class RmtsContext : DbContext
 	{
-		private const string CONNECTION_STRING = "data source=CP; initial catalog=RMTS_DB; integrated security=SSPI;";
+		//private const string CONNECTION_STRING = "data source=CP; initial catalog=RMTS_DB; integrated security=SSPI;";
+	    private const string CONNECTION_STRING =
+            "Server=10.213.112.114;Database=RMTS;User Id=RMTS;Password=Habibke01;Pooling=false;";
 
-		public DbSet<Action> Actions { get; set; }
+
+        public DbSet<Action> Actions { get; set; }
 		public DbSet<ActionType> ActionTypes { get; set; }
 		public DbSet<Address> Addresses { get; set; }
 		public DbSet<Prospect> Prospects { get; set; }
@@ -17,7 +20,10 @@ namespace RMTS.Backend.Data
 		public DbSet<User> Users { get; set; }
 
 		// Hier wordt de connectiestring gezet.
-		public RmtsContext() : base(CONNECTION_STRING) { }
+	    public RmtsContext() : base(CONNECTION_STRING)
+	    {
+	        var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
+	    }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{

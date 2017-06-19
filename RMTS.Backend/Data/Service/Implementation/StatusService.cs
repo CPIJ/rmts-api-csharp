@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RMTS.Backend.Data.Repository.Implementations.Entity_Framework;
 using RMTS.Backend.Data.Service.Interface;
 using RMTS.Backend.Models;
 
@@ -10,31 +11,36 @@ namespace RMTS.Backend.Data.Service.Implementation
 {
     public class StatusService : IStatusService
     {
-        private readonly IStatusService statusService;
+        private readonly IStatusRepository statusRepository;
+
+        public StatusService(IStatusRepository statusRepository)
+        {
+            this.statusRepository = statusRepository;
+        }
 
         public bool Create(Status item)
         {
-            return statusService.Create(item);
+            return statusRepository.Create(item);
         }
 
         public bool Update(Status item)
         {
-            return statusService.Update(item);
+            return statusRepository.Update(item);
         }
 
         public bool Delete(int? id)
         {
-            return id != null && statusService.Delete(id);
+            return id != null && statusRepository.Delete(id);
         }
 
         public IEnumerable<Status> GetAll()
         {
-            return statusService.GetAll();
+            return statusRepository.GetAll();
         }
 
         public Status Find(int id)
         {
-            return statusService.Find(id);
+            return statusRepository.Find(id);
         }
     }
 }

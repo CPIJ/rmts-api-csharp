@@ -56,7 +56,9 @@
     <Compile Include="Data\Mapping\UserMapping.cs" />
     <Compile Include="Data\Repository\Implementations\Entity Framework\EfActionRepository.cs" />
     <Compile Include="Data\Repository\Implementations\Entity Framework\EfActionTypeRepository.cs" />
+    <Compile Include="Data\Repository\Implementations\Entity Framework\EfStatusRepository.cs" />
     <Compile Include="Data\Repository\Implementations\Entity Framework\EfUserRepository.cs" />
+    <Compile Include="Data\Repository\Interface\IStatusRepository.cs" />
     <Compile Include="Data\Repository\Implementations\Fake\FakeUserRepository.cs" />
     <Compile Include="Data\Repository\Interface\IActionRepository.cs" />
     <Compile Include="Data\Repository\Interface\IActionTypeRepository.cs" />
@@ -65,9 +67,13 @@
     <Compile Include="Data\Service\IBasicService.cs" />
     <Compile Include="Data\Service\Implementation\ActionService.cs" />
     <Compile Include="Data\Service\Implementation\ActionTypeService.cs" />
+    <Compile Include="Data\Service\Implementation\ProspectService.cs" />
+    <Compile Include="Data\Service\Implementation\StatusService.cs" />
     <Compile Include="Data\Service\Implementation\UserService.cs" />
     <Compile Include="Data\Service\Interface\IActionService.cs" />
     <Compile Include="Data\Service\Interface\IActionTypeService.cs" />
+    <Compile Include="Data\Service\Interface\IProspectService.cs" />
+    <Compile Include="Data\Service\Interface\IStatusService.cs" />
     <Compile Include="Data\Service\Interface\IUserService.cs" />
     <Compile Include="Migrations\201706051038021_Initial.cs" />
     <Compile Include="Migrations\201706051038021_Initial.Designer.cs">
