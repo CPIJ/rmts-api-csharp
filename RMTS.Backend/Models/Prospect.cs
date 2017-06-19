@@ -4,7 +4,7 @@ namespace RMTS.Backend.Models
 {
     public class Prospect
     {
-        public int Id { get; private set; }
+        public int Id { get; set; }
         public Address Address { get; set; }
         public string Profession { get; set; }
         public SocialLinks SocialLinks { get; set; }

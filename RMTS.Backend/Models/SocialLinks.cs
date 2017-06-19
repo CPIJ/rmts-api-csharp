@@ -7,6 +7,11 @@
 		public string Twitter { get; set; }
 		public string LinkedIn { get; set; }
 
+		public SocialLinks()
+		{
+			
+		}
+
 		public SocialLinks(string facebook, string twitter, string linkedIn)
 		{
 			Facebook = facebook;

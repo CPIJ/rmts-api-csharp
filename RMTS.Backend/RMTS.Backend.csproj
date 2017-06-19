@@ -57,11 +57,13 @@
     <Compile Include="Data\Repository\Implementations\Entity Framework\EfActionRepository.cs" />
     <Compile Include="Data\Repository\Implementations\Entity Framework\EfActionTypeRepository.cs" />
     <Compile Include="Data\Repository\Implementations\Entity Framework\EfStatusRepository.cs" />
+    <Compile Include="Data\Repository\Implementations\Entity Framework\EfProspectRepository.cs" />
     <Compile Include="Data\Repository\Implementations\Entity Framework\EfUserRepository.cs" />
     <Compile Include="Data\Repository\Interface\IStatusRepository.cs" />
     <Compile Include="Data\Repository\Implementations\Fake\FakeUserRepository.cs" />
     <Compile Include="Data\Repository\Interface\IActionRepository.cs" />
     <Compile Include="Data\Repository\Interface\IActionTypeRepository.cs" />
+    <Compile Include="Data\Repository\Interface\IProspectRepository.cs" />
     <Compile Include="Data\Repository\Interface\IUserRepository.cs" />
     <Compile Include="Data\RmtsContext.cs" />
     <Compile Include="Data\Service\IBasicService.cs" />

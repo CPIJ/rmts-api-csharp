@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Routing;
 using RMTS.API;
+using RMTS.API.MessageHandlers;
 
 namespace rmts_api
 {
@@ -13,6 +14,7 @@ namespace rmts_api
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
-        }
+	        GlobalConfiguration.Configuration.MessageHandlers.Add(new ApiKeyHandler());
+		}
     }
 }

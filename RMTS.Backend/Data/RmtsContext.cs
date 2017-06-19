@@ -10,12 +10,14 @@ namespace RMTS.Backend.Data
 		//private const string CONNECTION_STRING = "data source=CP; initial catalog=RMTS_DB; integrated security=SSPI;";
 	    private const string CONNECTION_STRING =
             "Server=10.213.112.114;Database=RMTS;User Id=RMTS;Password=Habibke01;Pooling=false;";
+		//public const string CONNECTION_STRING = "Server=84.24.62.136;Database=RMTS;User Id=RMTS;Password=Habibke01;Pooling=false;";
 
 
         public DbSet<Action> Actions { get; set; }
 		public DbSet<ActionType> ActionTypes { get; set; }
 		public DbSet<Address> Addresses { get; set; }
 		public DbSet<Prospect> Prospects { get; set; }
+		public DbSet<SocialLinks> SocialLinks { get; set; }
 		public DbSet<Status> Statuses { get; set; }
 		public DbSet<User> Users { get; set; }
 
