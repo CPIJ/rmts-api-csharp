@@ -8,6 +8,10 @@ namespace RMTS.Backend.Data.Mapping
 		internal ActionMapping()
 		{
 			Property(a => a.Location).IsRequired();
+
+			HasRequired(a => a.ActionType)
+				.WithMany(a => a.Actions)
+				.HasForeignKey(a => a.ActionTypeId);
 		}
 	}
 }

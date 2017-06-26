@@ -14,6 +14,8 @@ namespace RMTS.Backend.Data.Mapping
 				.IsRequired()
 				.HasColumnAnnotation(IndexAnnotation.AnnotationName, new IndexAnnotation(
 					new IndexAttribute("U_Name", 1) {IsUnique = true}));
+
+			
 		}
 	}
 }

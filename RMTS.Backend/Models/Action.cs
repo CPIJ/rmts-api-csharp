@@ -12,6 +12,7 @@ namespace RMTS.Backend.Models
         public bool Completed { get; set; }
         public string Description { get; set; }
         public string Location { get; set; }
+	    public virtual int ActionTypeId { get; set; }
 
 	    public Action()	
 	    {

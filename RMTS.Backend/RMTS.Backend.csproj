@@ -121,6 +121,10 @@
     <Compile Include="Migrations\201706260702558_Verbetering.Designer.cs">
       <DependentUpon>201706260702558_Verbetering.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706260828413_ActionManyToOneAcionTypes.cs" />
+    <Compile Include="Migrations\201706260828413_ActionManyToOneAcionTypes.Designer.cs">
+      <DependentUpon>201706260828413_ActionManyToOneAcionTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Action.cs" />
     <Compile Include="Models\ActionType.cs" />
@@ -166,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706260702558_Verbetering.resx">
       <DependentUpon>201706260702558_Verbetering.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706260828413_ActionManyToOneAcionTypes.resx">
+      <DependentUpon>201706260828413_ActionManyToOneAcionTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
