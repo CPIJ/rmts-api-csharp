@@ -21,7 +21,11 @@ namespace RMTS.Backend.Data
 		public DbSet<User> Users { get; set; }
 
 		// Hier wordt de connectiestring gezet.
-		public RmtsContext() : base(CONNECTION_STRING) { }
+		public RmtsContext() : base(CONNECTION_STRING)
+		{
+			// Lazyloading uitgezet omdat dit moeilijk doet met serialisatie.
+			Configuration.LazyLoadingEnabled = false;
+		}
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
@@ -30,6 +34,8 @@ namespace RMTS.Backend.Data
 			modelBuilder.Configurations.Add(new ProspectMapping());
 			modelBuilder.Configurations.Add(new StatusMapping());
 			modelBuilder.Configurations.Add(new UserMapping());
+
+		
 
 			// Zorgt ervoor dat de tabellen niet in meervoud zijn.
 			// Actions -> Action, Prospects -> Prospect etc.

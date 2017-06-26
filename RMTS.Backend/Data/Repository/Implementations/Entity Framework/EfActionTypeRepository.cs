@@ -13,7 +13,7 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
 			using (var context = new RmtsContext())
 			{
 				context.ActionTypes.Add(actionType);
-				return context.SaveChanges() > 0;
+				return context.SaveChanges() > -1;
 			}
 		}
 
@@ -25,7 +25,7 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
 				if (at == null) return false;
 
 				context.Entry(at).CurrentValues.SetValues(actionType);
-				return context.SaveChanges() > 0;
+				return context.SaveChanges() > -1;
 			}
 		}
 
@@ -37,7 +37,7 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
 				if (at == null) return false;
 
 				context.ActionTypes.Remove(at);
-				return context.SaveChanges() > 0;
+				return context.SaveChanges() > -1;
 			}
 		}
 

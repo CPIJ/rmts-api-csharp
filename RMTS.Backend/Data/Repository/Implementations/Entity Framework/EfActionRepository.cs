@@ -19,19 +19,19 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
 				context.Prospects.Attach(action.Prospect);
 				context.Users.Attach(action.User);
 				context.Actions.Add(action);
-				return context.SaveChanges() > 0;
+				return context.SaveChanges() > -1;
 			}
 		}
 
 		public bool Update(Action action)
 		{
 			using (var context = new RmtsContext())
-			{
+				{
 				var foundAction = context.Actions.FirstOrDefault(a => a.Id == action.Id);
 				if (foundAction == null) return false;
 
 				context.Entry(foundAction).CurrentValues.SetValues(action);
-				return context.SaveChanges() > 0;
+				return context.SaveChanges() > -1;
 			}
 		}
 
@@ -43,7 +43,7 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
 				if (foundAction == null) return false;
 
 				context.Actions.Remove(foundAction);
-				return context.SaveChanges() > 0;
+				return context.SaveChanges() > -1;
 			}
 		}
 
@@ -54,12 +54,14 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
 				// Include zorgt ervoor dat de properties megenomen worden.
 				// Dit komt door het lazy loaden, als include er niet staat zijn de properties null.
 				// Misschien een andere oplossing zoeken, iedere include voert namelijk een extra query uit.
-				return context.Actions
+				var b = context.Actions
 					.Include(a => a.ActionType)
 					.Include(a => a.User)
 					.Include(a => a.Prospect)
 					.Include(a => a.Prospect.Status.Prospects)
 					.ToList();
+
+				return b;
 			}
 		}
 
