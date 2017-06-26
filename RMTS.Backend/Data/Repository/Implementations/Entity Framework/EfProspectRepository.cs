@@ -27,12 +27,26 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
 				var statusToUpdate = context.Statuses.FirstOrDefault(s => s.Id == item.Status.Id);
 				var socialToUpdate = context.SocialLinks.FirstOrDefault(s => s.Id == item.SocialLinks.Id);
 
-				if (prospectToUpdate == null || addressToUpdate == null || statusToUpdate == null || socialToUpdate == null) return false;
+				if (addressToUpdate == null)
+				{
+					prospectToUpdate.Address = context.Addresses.Add(item.Address);
+				}
+				else
+				{
+					context.Entry(addressToUpdate).CurrentValues.SetValues(item.Address);
+				}
 
-				context.Entry(prospectToUpdate).CurrentValues.SetValues(item);
-				context.Entry(addressToUpdate).CurrentValues.SetValues(item.Address);
+				if (socialToUpdate == null)
+				{
+					prospectToUpdate.SocialLinks = context.SocialLinks.Add(item.SocialLinks);
+				}
+				else
+				{
+					context.Entry(socialToUpdate).CurrentValues.SetValues(item.SocialLinks);
+				}
+
 				context.Entry(statusToUpdate).CurrentValues.SetValues(item.Status);
-				context.Entry(socialToUpdate).CurrentValues.SetValues(item.SocialLinks);
+				context.Entry(prospectToUpdate).CurrentValues.SetValues(item);
 
 				return context.SaveChanges() > 0;
 			}
@@ -71,6 +85,7 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
 					.Include(p => p.Address)
 					.Include(p => p.SocialLinks)
 					.Include(p => p.Status)
+					.Include(p => p.Status.Prospects)
 					.FirstOrDefault();
 			}
 		}

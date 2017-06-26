@@ -49,7 +49,9 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
         {
             using (var context = new RmtsContext())
             {
-                return context.Statuses.Include(s => s.Prospects).ToList();
+                return context.Statuses
+					.Include(s => s.Prospects)
+					.ToList();
             }
         }
 
@@ -57,7 +59,9 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
         {
             using (var context = new RmtsContext())
             {
-                return context.Statuses.Find(id);
+	            return context.Statuses
+		            .Include(s => s.Prospects)
+					.FirstOrDefault(s => s.Id == id);
             }
         }
     }

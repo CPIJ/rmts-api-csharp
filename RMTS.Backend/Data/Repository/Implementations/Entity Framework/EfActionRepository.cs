@@ -54,6 +54,7 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
 					.Include(a => a.ActionType)
 					.Include(a => a.User)
 					.Include(a => a.Prospect)
+					.Include(a => a.Prospect.Status.Prospects)
 					.ToList();
 			}
 		}
@@ -66,6 +67,7 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
 					.Include(a => a.ActionType)
 					.Include(a => a.User)
 					.Include(a => a.Prospect)
+					.Include(a => a.Prospect.Status.Prospects)
 					.FirstOrDefault(a => a.Id == id);
 
 			}
@@ -81,6 +83,7 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
 						.Include(a => a.ActionType)
 						.Include(a => a.User)
 						.Include(a => a.Prospect)
+						.Include(a => a.Prospect.Status.Prospects)
 						.ToList()
 				);
 			}
@@ -95,6 +98,7 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
 					.Include(a => a.ActionType)
 					.Include(a => a.User)
 					.Include(a => a.Prospect)
+					.Include(a => a.Prospect.Status.Prospects)
 					.ToList();
 			}
 		}
@@ -109,6 +113,7 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
 						.Include(a => a.ActionType)
 						.Include(a => a.User)
 						.Include(a => a.Prospect)
+						.Include(a => a.Prospect.Status.Prospects)
 						.ToList()
 				);
 			}
@@ -123,6 +128,7 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
 					.Include(a => a.ActionType)
 					.Include(a => a.User)
 					.Include(a => a.Prospect)
+					.Include(a => a.Prospect.Status.Prospects)
 					.ToList();
 			}
 		}
