@@ -8,12 +8,13 @@ namespace RMTS.Backend.Models
         public Address Address { get; set; }
         public string Profession { get; set; }
         public SocialLinks SocialLinks { get; set; }
-        public Status Status { get; set; }
+        public virtual Status Status { get; set; }
+	    public int StatusId { get; set; }
         public string FirstName { get; set; }
         public string Infix { get; set; }
         public string Surname { get; set; }
-        public string Fullname => $"{FirstName} {Infix} {Surname}";
-        public string Phonenumber { get; set; }
+        public string FullName => $"{FirstName} {Infix} {Surname}";
+        public string PhoneNumber { get; set; }
         public string EmailAddress { get; set; }
         public string ImageUrl { get; set; }
         public string Description { get; set; }
@@ -23,7 +24,7 @@ namespace RMTS.Backend.Models
 		    
 	    }
 
-        public Prospect(Address address, string profession, SocialLinks socialLinks, Status status, string firstName, string infix, string surname, string phonenumber, string emailAddress, string imageUrl, string description)
+        public Prospect(Address address, string profession, SocialLinks socialLinks, Status status, string firstName, string infix, string surname, string phoneNumber, string emailAddress, string imageUrl, string description)
         {
             Address = address;
             Profession = profession;
@@ -32,7 +33,7 @@ namespace RMTS.Backend.Models
             FirstName = firstName;
             Infix = infix;
             Surname = surname;
-            Phonenumber = phonenumber;
+            PhoneNumber = phoneNumber;
             EmailAddress = emailAddress;
             ImageUrl = imageUrl;
             Description = description;

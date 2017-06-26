@@ -1,24 +1,27 @@
-﻿namespace RMTS.Backend.Models
+﻿using System.Collections.Generic;
+
+namespace RMTS.Backend.Models
 {
     public class Status
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Content { get; set; }
+	    public virtual ICollection<Prospect> Prospects { get; set; }
 
 	    public Status()
 	    {
 		    
 	    }
 
-        public Status(int id, string name)
+        public Status(int id, string content)
         {
             Id = id;
-            Name = name;
+            Content = content;
         }
 
-	    public Status(string name)
+	    public Status(string content)
 	    {
-		    this.Name = name;
+		    this.Content = content;
 	    }
     }
 }

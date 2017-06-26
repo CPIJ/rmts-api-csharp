@@ -12,6 +12,7 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
 		{
 			using (var context = new RmtsContext())
 			{
+				context.Statuses.Attach(item.Status);
 				context.Prospects.Add(item);
 				return context.SaveChanges() > 0;
 			}
@@ -57,6 +58,7 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
 					.Include(p => p.Address)
 					.Include(p => p.SocialLinks)
 					.Include(p => p.Status)
+					.Include(p => p.Status.Prospects)
 					.ToList();
 			}
 		}

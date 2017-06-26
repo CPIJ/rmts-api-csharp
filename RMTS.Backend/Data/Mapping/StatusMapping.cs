@@ -9,7 +9,7 @@ namespace RMTS.Backend.Data.Mapping
 	{
 		internal StatusMapping()
 		{
-			Property(s => s.Name)
+			Property(s => s.Content)
 				.HasMaxLength(450)
 				.IsRequired()
 				.HasColumnAnnotation(IndexAnnotation.AnnotationName, new IndexAnnotation(

@@ -24,7 +24,9 @@ namespace RMTS.Backend.Data.Mapping
 			Property(p => p.FirstName).IsRequired();
 			Property(p => p.Surname).IsRequired();
 
-			HasRequired(p => p.Status);
+			HasRequired(p => p.Status)
+				.WithMany(s => s.Prospects)
+				.HasForeignKey(p => p.StatusId);
 		}
 	}
 }

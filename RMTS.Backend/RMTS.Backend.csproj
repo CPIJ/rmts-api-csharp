@@ -56,8 +56,10 @@
     <Compile Include="Data\Mapping\UserMapping.cs" />
     <Compile Include="Data\Repository\Implementations\Entity Framework\EfActionRepository.cs" />
     <Compile Include="Data\Repository\Implementations\Entity Framework\EfActionTypeRepository.cs" />
+    <Compile Include="Data\Repository\Implementations\Entity Framework\EfStatusRepository.cs" />
     <Compile Include="Data\Repository\Implementations\Entity Framework\EfProspectRepository.cs" />
     <Compile Include="Data\Repository\Implementations\Entity Framework\EfUserRepository.cs" />
+    <Compile Include="Data\Repository\Interface\IStatusRepository.cs" />
     <Compile Include="Data\Repository\Implementations\Fake\FakeUserRepository.cs" />
     <Compile Include="Data\Repository\Interface\IActionRepository.cs" />
     <Compile Include="Data\Repository\Interface\IActionTypeRepository.cs" />
@@ -68,10 +70,12 @@
     <Compile Include="Data\Service\Implementation\ActionService.cs" />
     <Compile Include="Data\Service\Implementation\ActionTypeService.cs" />
     <Compile Include="Data\Service\Implementation\ProspectService.cs" />
+    <Compile Include="Data\Service\Implementation\StatusService.cs" />
     <Compile Include="Data\Service\Implementation\UserService.cs" />
     <Compile Include="Data\Service\Interface\IActionService.cs" />
     <Compile Include="Data\Service\Interface\IActionTypeService.cs" />
     <Compile Include="Data\Service\Interface\IProspectService.cs" />
+    <Compile Include="Data\Service\Interface\IStatusService.cs" />
     <Compile Include="Data\Service\Interface\IUserService.cs" />
     <Compile Include="Migrations\201706051038021_Initial.cs" />
     <Compile Include="Migrations\201706051038021_Initial.Designer.cs">
@@ -88,6 +92,34 @@
     <Compile Include="Migrations\201706051329278_Nullable.cs" />
     <Compile Include="Migrations\201706051329278_Nullable.Designer.cs">
       <DependentUpon>201706051329278_Nullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706191151256_NameToContent.cs" />
+    <Compile Include="Migrations\201706191151256_NameToContent.Designer.cs">
+      <DependentUpon>201706191151256_NameToContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706191200095_ProspectRenaming.cs" />
+    <Compile Include="Migrations\201706191200095_ProspectRenaming.Designer.cs">
+      <DependentUpon>201706191200095_ProspectRenaming.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706191219114_CopiedFromFrondEnd.cs" />
+    <Compile Include="Migrations\201706191219114_CopiedFromFrondEnd.Designer.cs">
+      <DependentUpon>201706191219114_CopiedFromFrondEnd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706191232242_ManyStatusses.cs" />
+    <Compile Include="Migrations\201706191232242_ManyStatusses.Designer.cs">
+      <DependentUpon>201706191232242_ManyStatusses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706191301089_multipleStatuses.cs" />
+    <Compile Include="Migrations\201706191301089_multipleStatuses.Designer.cs">
+      <DependentUpon>201706191301089_multipleStatuses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706191312431_MultipleStatusesTwo.cs" />
+    <Compile Include="Migrations\201706191312431_MultipleStatusesTwo.Designer.cs">
+      <DependentUpon>201706191312431_MultipleStatusesTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706260702558_Verbetering.cs" />
+    <Compile Include="Migrations\201706260702558_Verbetering.Designer.cs">
+      <DependentUpon>201706260702558_Verbetering.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Action.cs" />
@@ -113,6 +145,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706051329278_Nullable.resx">
       <DependentUpon>201706051329278_Nullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706191151256_NameToContent.resx">
+      <DependentUpon>201706191151256_NameToContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706191200095_ProspectRenaming.resx">
+      <DependentUpon>201706191200095_ProspectRenaming.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706191219114_CopiedFromFrondEnd.resx">
+      <DependentUpon>201706191219114_CopiedFromFrondEnd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706191232242_ManyStatusses.resx">
+      <DependentUpon>201706191232242_ManyStatusses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706191301089_multipleStatuses.resx">
+      <DependentUpon>201706191301089_multipleStatuses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706191312431_MultipleStatusesTwo.resx">
+      <DependentUpon>201706191312431_MultipleStatusesTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706260702558_Verbetering.resx">
+      <DependentUpon>201706260702558_Verbetering.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

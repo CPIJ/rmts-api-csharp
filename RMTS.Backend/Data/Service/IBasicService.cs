@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace RMTS.Backend.Data.Service.Interface
+namespace RMTS.Backend.Data.Service
 {
     public interface IBasicService<T>
     {
