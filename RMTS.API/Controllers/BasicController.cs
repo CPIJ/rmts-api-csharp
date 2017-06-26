@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.Http;
+using RMTS.API.Security;
 using RMTS.Backend.Data.Service;
 using RMTS.Backend.Data.Service.Interface;
 

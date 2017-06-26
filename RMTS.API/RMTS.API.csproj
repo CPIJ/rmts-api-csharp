@@ -149,6 +149,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\ApiKeyHeader.cs" />
+    <Compile Include="Security\BasicAuthenticationAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

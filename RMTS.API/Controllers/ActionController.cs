@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Http;
+using RMTS.API.Security;
 using RMTS.Backend.Data.Repository.Implementations.Entity_Framework;
 using RMTS.Backend.Data.Service.Implementation;
 using RMTS.Backend.Data.Service.Interface;
@@ -8,7 +9,8 @@ using Action = RMTS.Backend.Models.Action;
 
 namespace RMTS.API.Controllers
 {
-    [RoutePrefix("Action")]
+	[BasicAuthentication]
+	[RoutePrefix("Action")]
     public class ActionController : BasicController<Action>
     {
 

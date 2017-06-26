@@ -35,7 +35,12 @@ namespace RMTS.Backend.Data.Service.Implementation
                     );
         }
 
-        public bool Create(User item)
+	    public bool Authenticate(string username, string password)
+	    {
+		    return userRepository.Authenticate(username, password);
+	    }
+
+	    public bool Create(User item)
         {
 	        return userRepository.Create(item);
         }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using RMTS.Backend.Data.Repository.Interface;
 using RMTS.Backend.Models;
@@ -54,6 +55,17 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
 			using (var context = new RmtsContext())
 			{
 				return context.Users.Find(id);
+			}
+		}
+
+		public bool Authenticate(string username, string password)
+		{
+			using (var context = new RmtsContext())
+			{
+				return context.Users.Any(u => 
+				u.Username
+					.Equals(username, StringComparison.OrdinalIgnoreCase) && 
+				u.Password == password);
 			}
 		}
 	}

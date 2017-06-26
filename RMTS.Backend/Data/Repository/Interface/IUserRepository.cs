@@ -10,5 +10,6 @@ namespace RMTS.Backend.Data.Repository.Interface
 	    bool Delete(int id);
         IEnumerable<User> GetAll();
         User Find(int id);
+	    bool Authenticate(string username, string password);
     }
 }

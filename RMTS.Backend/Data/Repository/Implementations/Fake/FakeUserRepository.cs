@@ -39,5 +39,10 @@ namespace RMTS.Backend.Data.Repository.Implementations.Fake
         {
             return users.FirstOrDefault(u => u.Id == id);
         }
+
+	    public bool Authenticate(string username, string password)
+	    {
+		    throw new System.NotImplementedException();
+	    }
     }
 }

@@ -5,5 +5,6 @@ namespace RMTS.Backend.Data.Service.Interface
     public interface IUserService : IBasicService<User>
     {
         User Login(Credentials credentials);
+	    bool Authenticate(string username, string password);
     }
 }
