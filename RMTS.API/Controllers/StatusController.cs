@@ -7,7 +7,6 @@ using RMTS.Backend.Models;
 
 namespace RMTS.API.Controllers
 {
-	[BasicAuthentication]
 	[RoutePrefix("Status")]
     public class StatusController : BasicController<Status>
     {

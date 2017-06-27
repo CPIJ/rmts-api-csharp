@@ -16,7 +16,7 @@ namespace RMTS.API.MessageHandlers
 			bool isValidKey = false;
 			IEnumerable<string> headers;
 			bool apiKeyExists = request.Headers.TryGetValues(ApiKeyConfig.Name, out headers);
-			bool isSwagger = CheckUri(request);
+			bool isSwagger = request.IsAllowed(AuthorizationConfig.Unprotected);
 
 			if (apiKeyExists)
 			{
@@ -32,11 +32,6 @@ namespace RMTS.API.MessageHandlers
 			var response = await base.SendAsync(request, cancellationToken);
 
 			return response;
-		}
-
-		private static bool CheckUri(HttpRequestMessage request)
-		{
-			return request.RequestUri.AbsolutePath.ToLower().StartsWith("/swagger");
 		}
 	}
 }

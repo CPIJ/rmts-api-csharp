@@ -12,7 +12,6 @@ using RMTS.Backend.Models;
 
 namespace RMTS.API.Controllers
 {
-	[BasicAuthentication]
 	[RoutePrefix("Prospect")]
 	public class ProspectController : BasicController<Prospect>
 	{

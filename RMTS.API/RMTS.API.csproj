@@ -136,6 +136,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MessageHandlers\AutorisationHandler.cs" />
     <Compile Include="Models\PdfRenderer.cs" />
     <Compile Include="Security\ApiKeyConfig.cs" />
     <Compile Include="MessageHandlers\ApiKeyHandler.cs" />
@@ -153,7 +154,8 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\ApiKeyHeader.cs" />
-    <Compile Include="Security\BasicAuthenticationAttribute.cs" />
+    <Compile Include="Security\AuthorizationConfig.cs" />
+    <Compile Include="Security\Extensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

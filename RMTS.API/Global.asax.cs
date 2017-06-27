@@ -14,7 +14,9 @@ namespace rmts_api
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+
 	        GlobalConfiguration.Configuration.MessageHandlers.Add(new ApiKeyHandler());
+			GlobalConfiguration.Configuration.MessageHandlers.Add(new AutorisationHandler());
 		}
     }
 }

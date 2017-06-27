@@ -9,7 +9,6 @@ using Action = RMTS.Backend.Models.Action;
 
 namespace RMTS.API.Controllers
 {
-	[BasicAuthentication]
 	[RoutePrefix("Action")]
     public class ActionController : BasicController<Action>
     {
