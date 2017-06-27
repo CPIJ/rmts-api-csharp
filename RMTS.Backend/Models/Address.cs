@@ -20,5 +20,10 @@
             Zipcode = zipcode;
 	        HouseNumber = houseNumber;
         }
+
+	    public override string ToString()
+	    {
+		    return $"{Street} {HouseNumber}, {Zipcode} {City}";
+	    }
     }
 }
