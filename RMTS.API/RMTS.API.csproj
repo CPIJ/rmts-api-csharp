@@ -136,7 +136,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\ProposalForm.cs" />
+    <Compile Include="Models\PdfRenderer.cs" />
     <Compile Include="Security\ApiKeyConfig.cs" />
     <Compile Include="MessageHandlers\ApiKeyHandler.cs" />
     <Compile Include="Providers\CustomDirectRouteProvider.cs" />
