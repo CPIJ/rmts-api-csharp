@@ -14,7 +14,6 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
 		{
 			using (var context = new RmtsContext())
 			{
-
 				context.ActionTypes.Attach(action.ActionType);
 				context.Statuses.Attach(action.Prospect.Status);
 				context.Prospects.Attach(action.Prospect);
@@ -27,8 +26,10 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
 		public bool Update(Action action)
 		{
 			using (var context = new RmtsContext())
-				{
-				var foundAction = context.Actions.FirstOrDefault(a => a.Id == action.Id);
+			{
+				var foundAction = context.Actions.Include(a => a.ActionType)
+					.Include(a => a.User)
+					.Include(a => a.Prospect).FirstOrDefault(a => a.Id == action.Id);
 				if (foundAction == null) return false;
 
 				context.Entry(foundAction).CurrentValues.SetValues(action);
