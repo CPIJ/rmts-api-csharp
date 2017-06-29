@@ -10,5 +10,6 @@ namespace RMTS.Backend.Data.Service.Interface
 		IEnumerable<Action> GetAllByProspectUnsorted(int prospectId);
 		SortedActions GetAllByUser(int userId);
 		IEnumerable<Action> GetAllByUserUnsorted(int userId);
+		SortedActions GetAllSorted();
 	}
 }

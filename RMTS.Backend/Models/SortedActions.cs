@@ -20,20 +20,21 @@ namespace RMTS.Backend.Models
 			Remainder = remainder;
 		}
 
-		public static SortedActions FromList(List<Action> actions)
+		public static SortedActions FromList(IEnumerable<Action> actions)
 		{
-			actions.Sort();
+			var actionsList = actions.ToList();
+			actionsList.Sort();
 
 			var dateTimeInfo = DateTimeFormatInfo.CurrentInfo;
 			if (dateTimeInfo == null) throw new NullReferenceException();
 
 			var cal = dateTimeInfo.Calendar;
 
-			var today = actions
+			var today = actionsList
 				.Where(a => a.Date == DateTime.Today)
 				.ToList();
 
-			var thisWeek = actions
+			var thisWeek = actionsList
 				.Where(a =>
 				{
 					int testWeek = cal.GetWeekOfYear(a.Date, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
@@ -43,7 +44,7 @@ namespace RMTS.Backend.Models
 				})
 				.ToList();
 
-			var thisMonth = actions
+			var thisMonth = actionsList
 				.Where(a =>
 				{
 					bool withinMonth = a.Date.Month == DateTime.Today.Month;
@@ -54,7 +55,7 @@ namespace RMTS.Backend.Models
 				})
 				.ToList();
 
-			var remainder = actions
+			var remainder = actionsList
 				.Where(a => a.Date.Month > DateTime.Today.Month)
 				.ToList();
 

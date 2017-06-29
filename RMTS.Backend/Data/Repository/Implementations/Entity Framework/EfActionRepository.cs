@@ -14,6 +14,7 @@ namespace RMTS.Backend.Data.Repository.Implementations.Entity_Framework
 		{
 			using (var context = new RmtsContext())
 			{
+
 				context.ActionTypes.Attach(action.ActionType);
 				context.Statuses.Attach(action.Prospect.Status);
 				context.Prospects.Attach(action.Prospect);

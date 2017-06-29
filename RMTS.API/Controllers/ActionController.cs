@@ -17,6 +17,13 @@ namespace RMTS.API.Controllers
 
         public ActionController() : base(ActionService) { }
 
+	    [HttpGet]
+	    [Route("All/Sorted")]
+	    public IHttpActionResult GetAllSorted()
+	    {
+		    return Ok(ActionService.GetAllSorted());
+	    }
+
         [HttpGet]
         [Route("All/Prospect/{prospectId}")]
         public IHttpActionResult GetAllByProspect(int? prospectId)

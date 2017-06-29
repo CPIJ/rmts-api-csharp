@@ -58,5 +58,10 @@ namespace RMTS.Backend.Data.Service.Implementation
 		{
 			return actionRepository.GetAllByUserUnsorted(userId);
 		}
+
+		public SortedActions GetAllSorted()
+		{
+			return SortedActions.FromList(GetAll());
+		}
 	}
 }
