@@ -16,7 +16,7 @@ namespace RMTS.API.MessageHandlers
 			bool isValidKey = false;
 			IEnumerable<string> headers;
 			bool apiKeyExists = request.Headers.TryGetValues(ApiKeyConfig.Name, out headers);
-			bool isSwagger = request.IsAllowed(AuthorizationConfig.Unprotected);
+			bool isSwagger = request.IsAllowed(AuthorizationConfig.OpenEndpoints);
 
 			if (apiKeyExists)
 			{

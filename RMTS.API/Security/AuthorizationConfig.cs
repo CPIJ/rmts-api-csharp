@@ -5,7 +5,7 @@ namespace RMTS.API.Security
 {
 	public static class AuthorizationConfig
 	{
-		public static IEnumerable<string> Unauthorized => new[] { "swagger", "login" };
-		public static IEnumerable<string> Unprotected => new[] { "swagger" };
+		public static IEnumerable<string> UnauthorizedEndpoints => new[] { "swagger", "login" };
+		public static IEnumerable<string> OpenEndpoints => new[] { "swagger" };
 	}
 }

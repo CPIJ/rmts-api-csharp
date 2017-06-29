@@ -21,7 +21,7 @@ namespace RMTS.API.MessageHandlers
 		{
 			// Als er via swagger en login een call gedaan wordt hoeft er niet ingelogd te zijn.
 			// De gebruiker wordt dan ook zonder probleem doorgelaten.
-			if (request.IsAllowed(AuthorizationConfig.Unauthorized)) return await base.SendAsync(request, cancellationToken);
+			if (request.IsAllowed(AuthorizationConfig.UnauthorizedEndpoints)) return await base.SendAsync(request, cancellationToken);
 
 			// Als er geen authorisation aanwezig is is de gebruiker standaard niet geauthoriseerd.
 			// Er wordt dan ook geen toegang verleent.
